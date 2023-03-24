@@ -73,4 +73,13 @@ public class EmployeeController {
 	public void delete(@PathVariable Integer id) {
 	    serv.delete(id);
 	}
+	
+	 @GetMapping("/employee/search")
+	 public List<Employee> ResponseEntity(Model model, String key) {
+	  if(key!=null) {
+	   List<Employee> list = serv.fingByKey(key);
+	   model.addAttribute("list", list);
+	  }
+	  return serv.fingByKey(key);
+     }
 }
