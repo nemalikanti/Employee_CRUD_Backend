@@ -37,4 +37,8 @@ public class EmployeeService {
 	public void delete(int id) {
 		repo.deleteById(id);
 	}
+	
+	public List<Employee> fingByKey(String key){
+		return repo.findByKey(key);
+	}
 }
